@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Form validation for signup (if applicable)
     const signupForm = document.querySelector("form");
     if (signupForm) {
-        signupForm.addEventListener("submit", function(event) {
+        signupForm.addEventListener("submit", function (event) {
             const email = signupForm.querySelector("input[name='email']").value;
             const password = signupForm.querySelector("input[name='password']").value;
 
@@ -17,43 +18,40 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Helper function to validate email
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase());
     }
-});
 
-// Card click functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    const clickedCards = JSON.parse(localStorage.getItem('clickedCards')) || [];
+    // Load clicked cards from localStorage or initialize an empty array
+    let clickedCards = JSON.parse(localStorage.getItem('clickedCards')) || [];
 
-    // On page load, apply the 'taken' class to previously clicked cards
-    clickedCards.forEach(cardId => {
-        const card = document.querySelector(`.card[data-id="${cardId}"]`);
-        if (card) {
+    // Apply the 'taken' class to previously clicked cards on page load
+    document.querySelectorAll('.card').forEach(card => {
+        const cardId = card.getAttribute('data-id');
+
+        // If the cardId exists in clickedCards, apply the 'taken' class
+        if (clickedCards.includes(cardId)) {
             card.classList.add('taken');
         }
-    });
 
-    // Add click event listeners to each card
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
+        // Add click event listener to each card
+        card.addEventListener('click', function () {
+            card.classList.toggle('taken');  // Toggle 'taken' class
             const cardId = card.getAttribute('data-id');
 
-            card.classList.toggle('taken');
             if (card.classList.contains('taken')) {
-                // Add cardId to clickedCards if it is now 'taken'
-                clickedCards.push(cardId);
-            } else {
-                // Remove cardId from clickedCards if the 'taken' class is removed
-                const index = clickedCards.indexOf(cardId);
-                if (index > -1) {
-                    clickedCards.splice(index, 1);
+                // If the card is marked as 'taken', add its ID to clickedCards
+                if (!clickedCards.includes(cardId)) {
+                    clickedCards.push(cardId);
                 }
+            } else {
+                // If 'taken' class is removed, remove the cardId from clickedCards
+                clickedCards = clickedCards.filter(id => id !== cardId);
             }
 
-            // Update localStorage with the new clickedCards array
+            // Update localStorage with the updated clickedCards array
             localStorage.setItem('clickedCards', JSON.stringify(clickedCards));
         });
     });
