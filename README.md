@@ -15,11 +15,6 @@ The **Medicine Reminder App** is a Flask-based web application that helps users 
 - **Responsive UI**: Modern user interface with mobile responsiveness.
 - **Notifications**: Alerts to remind users about their scheduled medicines.
 
-## Screenshots
-
-(Add screenshots here of your app in action, showing the dashboard, scheduling, and prescription features.)
-
-## Installation
 
 ### Prerequisites
 
@@ -76,34 +71,6 @@ The **Medicine Reminder App** is a Flask-based web application that helps users 
 4. **Dashboard:**
    - View your upcoming doses, completed doses, and uploaded prescriptions on the main dashboard.
 
-## File Structure
-
-```
-medicine-reminder-app/
-│
-├── app.py                     # Main Flask app
-├── nlp_chatbot.py              # Chatbot logic and multilingual support (optional)
-├── booking_system.py           # Booking system (if applicable)
-├── payment_gateway.py          # Payment integration (optional)
-├── templates/
-│   ├── base.html               # Base template for all pages
-│   ├── dashboard.html          # Dashboard view
-│   ├── login.html              # Login page
-│   ├── signup.html             # Signup page
-│   ├── prescription.html       # Prescription upload and view
-│   └── schedule.html           # Medicine schedule page
-│
-├── static/
-│   ├── styles.css              # Custom CSS for styling the app
-│   ├── scripts.js              # JavaScript for interactivity
-│   └── images/                 # Images for UI (if any)
-│
-├── init_db.py                  # Database initialization script
-├── config.py                   # App configuration
-├── README.md                   # Project README
-└── requirements.txt            # Python dependencies
-```
-
 ## Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript
@@ -128,4 +95,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Feel free to customize this `README.md` to better suit your project and add more details about additional features, screenshots, or instructions.
