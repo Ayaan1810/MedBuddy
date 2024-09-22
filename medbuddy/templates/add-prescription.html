@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Prescription</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>MedBuddy</h1>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/schedule">Manage Schedule</a></li>
+            <li><a href="/prescription">View Prescriptions</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Add Prescription</h1>
+        <form action="/prescription/submit" method="POST" enctype="multipart/form-data">
+            <label for="prescription-file">Upload Prescription:</label>
+            <input type="file" name="prescription-file" accept=".pdf,.jpg,.jpeg,.png" required>
+
+            <button type="submit">Upload</button>
+        </form>
+
+        <a href="/prescription" class="back-link">Back to Prescriptions</a>
+    </div>
+</body>
+</html>

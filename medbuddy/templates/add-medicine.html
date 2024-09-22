@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Medicine Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>MedBuddy</h1>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/schedule">Manage Schedule</a></li>
+            <li><a href="/prescription">View Prescriptions</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Add Medicine Schedule</h1>
+        <form action="/schedule/add" method="POST">
+            <label for="medicine-name">Medicine Name:</label>
+            <input type="text" name="medicine-name" placeholder="Enter the medicine name" required>
+
+            <label for="hours">Hours:</label>
+            <input type="number" name="hours" min="1" max="12" placeholder="Hours (1-12)" required>
+
+            <label for="minutes">Minutes:</label>
+            <input type="number" name="minutes" min="0" max="59" placeholder="Minutes (0-59)" required>
+
+            <label for="halftime">AM/PM:</label>
+            <select name="halftime" required>
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+
+            <label for="start-date">Start Date:</label>
+            <input type="date" name="start-date" required>
+
+            <label for="end-date">End Date:</label>
+            <input type="date" name="end-date" required>
+
+            <button type="submit">Add Schedule</button>
+        </form>
+
+        <a href="/schedule" class="back-link">Back to Schedule</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>MedBuddy</h1>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/schedule">Manage Schedule</a></li>
+            <li><a href="/prescription">View Prescriptions</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Your Schedule</h1>
+        
+        <!-- Upcoming Section -->
+        <section>
+            <h2>Upcoming</h2>
+            <div class="schedule-cards">
+                {{ upcoming_card_html|safe }}
+            </div>
+        </section>
+
+        <!-- Completed Section -->
+        <section>
+            <h2>Completed</h2>
+            <div class="schedule-cards">
+                {{ completed_card_html|safe }}
+            </div>
+        </section>
+
+        <div class="links">
+            <div>
+                <a href="/schedule/add" class="button-link">Add Medicine</a>
+            </div>
+            <div>
+                <a href="/dashboard" class="button-link">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

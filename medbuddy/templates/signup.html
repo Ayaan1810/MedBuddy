@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>MedBuddy</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form action="/signup/verify" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="contact">Contact:</label>
+            <input type="text" name="contact" placeholder="Enter your contact number" required>
+            
+            <label for="emergency_contact">Emergency Contact:</label>
+            <input type="text" name="emergency_contact" placeholder="Enter emergency contact" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p class="flash-messages">{{ get_flashed_messages() }}</p>
+        <p>Already have an account? <a href="/login">Login here</a>.</p>
+    </div>
+</body>
+</html>

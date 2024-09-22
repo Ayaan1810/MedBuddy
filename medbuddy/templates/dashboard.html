@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>MedBuddy</h1>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/schedule">Manage Schedule</a></li>
+            <li><a href="/prescription">View Prescriptions</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome, {{ name }}</h1>
+        <h2>Your Upcoming Doses: {{ upcoming_count }}</h2>
+
+        <div>
+            <h3>Today’s Schedule</h3>
+            <div class="schedule">
+                <!-- Example Dose Cards -->
+                {{ today_card_html|safe }} <!-- Ensure this generates cards with data-id attributes -->
+            </div>
+        </div>
+
+        <div class="links">
+            <div>
+                <a href="/schedule" class="button-link">Manage Schedule</a>
+            </div>
+            <div>
+                <a href="/prescription" class="button-link">View Prescriptions</a>
+            </div>
+            <div>
+                <a href="/logout" class="button-link logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

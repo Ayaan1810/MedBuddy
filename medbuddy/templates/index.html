@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Reminder App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+    <style>
+        /* Basic Reset and Flexbox for full-height layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            flex: 1; /* Allows the container to take available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero {
+            background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            padding: 20px; /* Adjust padding to reduce size */
+            margin: 10px; /* Add margin to separate from other elements */
+            border-radius: 8px; /* Rounded corners for better appearance */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            max-width: 600px; /* Limit the maximum width of the hero section */
+            text-align: center; /* Center align text */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2C3E50; /* Change to your preferred color */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">MedBuddy</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Stay on Track with Your Medication</h2>
+            <p>Effortlessly manage your medication schedule and never miss a dose.</p>
+            <a href="/signup" class="btn-primary">Get Started</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Medicine Reminder App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
