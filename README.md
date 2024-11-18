@@ -1,7 +1,8 @@
 # MedBuddy
 
 Contributors: Bhanvi Nayer , Ayaan Edward
- Stay on Track with Your Medication
+
+Stay on Track with Your Medication
 Here's a `README.md` template for your **Medicine Reminder App** project. You can modify the content as needed based on the specific features of your project:
 
 ---
